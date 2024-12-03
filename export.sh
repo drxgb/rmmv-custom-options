@@ -1,0 +1,1 @@
+cp XGB_CustomOptions.js ../../Testes/ProjetoTeste/js/plugins/XGB_CustomOptions.js
