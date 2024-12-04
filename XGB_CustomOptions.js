@@ -37,26 +37,44 @@
  * É muito importante seguir a estrutura proposta por este documento para que o
  * plugin funcione corretamente:
  *
- * [
- *     {
- *         "key": "foo",
+ * {
+ *     "foo": {
  *         "title": "Foo property",
  *         "type": "boolean",
- *         "default": false,
+ *         "default": false
  *     }
- * ]
+ * }
  *
- * - key: A chave da propriedade da opção. Ele será armazenado como propriedade
- *        de ConfigManager. Portanto não utilize espaçamentos e caracteres
+ * OU
+ *
+ * {
+ *     "bar": {
+ *         "title": "Bar propery",
+ *         "type": "select",
+ *         "options": [ "red", "yellow", "green" ],
+ *         "default": 1
+ *     }
+ * }
+ *
+ * A chave da propriedade da opção será armazenada como propriedade de
+ *        ConfigManager. Portanto não utilize espaçamentos e caracteres
  *        especiais (com exceção do _).
  * - title: O nome de exibição da opção.
  * - type: O tipo da opção. Há dois tipos de opção:
  *     + boolean: Valores booleanos, ou seja, somente true ou false
  *     + select: Lista de valores onde o jogador navegará com as setas esquerda
  *               e direita para escolher a opção.
+ * - options: A lista de opções quando o valor de "type" for "select".
  * - default: O valor padrão da opção caso o mesmo ainda não foi configurado.
+ *            Quando o valor de "type" for "select", este será considerado o
+ *            índice da lista. Por exemplo: se nesta opção temos a lista:
+ *            [ "abacaxi", "banana", "caju", "damasco" ] e "default" é 1,
+ *            então o valor padrão será exibido como "banana".
  *            Este atributo não é obrigatório.
- *
+ *            Quando o atributo for omitido e o valor de "type" for "boolean",
+ *            o padrão será considerado o valor "false" e quando o valor de
+ *            "type" for "select", será considerado o primeiro índice da lista,
+ *            ou seja, o valor 0.
  */
 
 // Referência do plugin
