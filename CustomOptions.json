@@ -1,0 +1,13 @@
+{
+	"tutorial": {
+		"title": "Use Tutorial",
+		"type": "boolean",
+		"default": false
+	},
+	"difficult": {
+		"title": "Difficult",
+		"type": "select",
+		"options": [ "Easy", "Normal", "Hard" ],
+		"default": 1
+	}
+}
